@@ -25,6 +25,35 @@ namespace Eindtoets_UWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            var jobs = new List<Job>();
+            jobs.Add(new Job { Title = "IT Expert", Department = "IT", Salary = 3000 });
+            jobs.Add(new Job { Title = "Software Expert", Department = "IT", Salary = 3200 });
+            jobs.Add(new Job { Title = "Sales agent", Department = "Sales", Salary = 2900 });
+            jobs.Add(new Job { Title = "Customer service", Department = "Sales", Salary = 2300 });
+            jobs.Add(new Job { Title = "Internal service", Department = "IT", Salary = 2500 });
+            jobs.Add(new Job { Title = "Account manager", Department = "Sales", Salary = 4000 });
+            //jobTitleEl.ItemsSource = jobs;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var jobs = new List<Job>();
+            jobs.Add(new Job { Title = "IT Expert", Department = "IT", Salary = 3000 });
+            jobs.Add(new Job { Title = "Software Expert", Department = "IT", Salary = 3200 });
+            jobs.Add(new Job { Title = "Sales agent", Department = "Sales", Salary = 2900 });
+            jobs.Add(new Job { Title = "Customer service", Department = "Sales", Salary = 2300 });
+            jobs.Add(new Job { Title = "Internal service", Department = "IT", Salary = 2500 });
+            jobs.Add(new Job { Title = "Account manager", Department = "Sales", Salary = 4000 });
+            string title = (this.jobTitleEl.SelectedItem as ComboBoxItem).Content.ToString();
+            foreach (var job in jobs)
+            {
+                if(job.Title == title)
+                {
+                    salary.Text = Convert.ToString(job.Salary);
+                }
+            }
         }
     }
 }

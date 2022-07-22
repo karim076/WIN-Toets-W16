@@ -9,6 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <StackPanel Margin="20">
+            <ComboBox Name="jobTitleEl" ItemsSource="{Binding jobs}">
+                <ComboBoxItem Content="{Binding Title}"/>
+            </ComboBox>
+            <Button Click="Button_Click">Salaris</Button>
+            <TextBlock x:Name="salary"></TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
